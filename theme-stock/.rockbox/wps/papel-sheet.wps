@@ -1,0 +1,49 @@
+#__papél player, alternate: spec sheet with hairline rows.
+#__c/o Jorge Cuza, CC BY 4.0. github.com/jorgecuza92/papel
+#__320x240 (iPod Video)
+#__standard Rockbox 4.0 edition
+%wd
+%Fl(2,44-Heros-Bold.fnt)
+%Fl(3,18-Heros-Regular.fnt)
+%Fl(4,14-Courier-Prime-Papel.fnt)
+%xl(M,mark.bmp,0,0)
+%xl(G,pbbg.bmp,0,0)
+%xl(B,pbfg.bmp,0,0)
+#
+%V(16,14,200,14,4)%Vf(000000)
+%al"now playing"
+%V(247,8,57,27,-)
+%xd(M)
+%V(16,40,288,1,-)%Vf(000000)
+%dr(0,0,288,1)
+#__title
+%V(16,48,288,54,2)%Vf(000000)
+%al%s"%ss(0,-,%it,lower)"
+#__rows
+%V(16,108,288,1,-)%Vf(B9B6AF)
+%dr(0,0,288,1)
+%V(16,116,64,14,4)%Vf(7A7772)
+%alartist
+%V(84,112,220,23,3)%Vf(000000)
+%al%s%ss(0,-,%ia,lower)
+%V(16,138,288,1,-)%Vf(B9B6AF)
+%dr(0,0,288,1)
+%V(16,146,64,14,4)%Vf(7A7772)
+%alalbum
+%V(84,142,220,23,3)%Vf(000000)
+%al%s%?id<%ss(0,-,%id,lower)|->
+%V(16,168,288,1,-)%Vf(B9B6AF)
+%dr(0,0,288,1)
+%V(16,176,64,14,4)%Vf(7A7772)
+%alfile
+%V(84,172,220,23,3)%Vf(000000)
+%al%?fc<mp1|mp2|mp3|aiff|wav|vorbis|flac|mpc|a52|wavpack|alac|aac|shorten|sid|adx|nsf|speex|spc|ape|wma|unknown> %fbkbps%ar%pp/%pe
+%V(16,198,288,1,-)%Vf(B9B6AF)
+%dr(0,0,288,1)
+#__progress + time
+%V(16,206,288,2,-)
+%pb(0,0,288,2,B,backdrop,G)
+%V(16,214,140,14,4)%Vf(000000)
+%al%pc
+%V(164,214,140,14,4)%Vf(000000)
+%ar-%pr

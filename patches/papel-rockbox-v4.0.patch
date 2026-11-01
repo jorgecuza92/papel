@@ -1,0 +1,866 @@
+diff --git a/apps/bitmaps/native/SOURCES b/apps/bitmaps/native/SOURCES
+index c31f660..1889095 100644
+--- a/apps/bitmaps/native/SOURCES
++++ b/apps/bitmaps/native/SOURCES
+@@ -30,7 +30,7 @@ rockboxlogo.220x68x16.bmp
+ #elif (LCD_WIDTH == 240) && (LCD_DEPTH >= 16)
+ rockboxlogo.240x74x16.bmp
+ #elif (LCD_WIDTH >= 320) && (LCD_WIDTH < 480)  && (LCD_DEPTH >= 16)
+-rockboxlogo.320x98x16.bmp
++rockboxlogo.320x240x16.bmp
+ #elif (LCD_WIDTH >= 480) && (LCD_WIDTH < 640) && (LCD_DEPTH >= 16)
+ rockboxlogo.480x149x16.bmp
+ #elif (LCD_WIDTH >= 640) && (LCD_DEPTH >= 16)
+@@ -61,7 +61,9 @@ toolsicon.130x130x16.bmp
+ 
+ /* USB logo */
+ #ifdef HAVE_LCD_COLOR
+-#if LCD_WIDTH > 176
++#if (LCD_WIDTH == 320) && (LCD_HEIGHT == 240)
++usblogo.320x240x16.bmp
++#elif LCD_WIDTH > 176
+ usblogo.176x48x16.bmp
+ #elif LCD_WIDTH >= 128
+ usblogo.128x37x16.bmp
+diff --git a/apps/bitmaps/native/rockboxlogo.320x240x16.bmp b/apps/bitmaps/native/rockboxlogo.320x240x16.bmp
+new file mode 100644
+index 0000000000000000000000000000000000000000..b1aac09119c353a463d8605a426ad1c43e1ffd31
+GIT binary patch
+literal 230454
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/apps/bitmaps/native/usblogo.320x240x16.bmp b/apps/bitmaps/native/usblogo.320x240x16.bmp
+new file mode 100644
+index 0000000000000000000000000000000000000000..fa55f13c94d5ff7bf85538e0dee1a18c96609e1a
+GIT binary patch
+literal 230454
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/apps/gui/skin_engine/skin_display.c b/apps/gui/skin_engine/skin_display.c
+index 53efc1f..029490f 100644
+--- a/apps/gui/skin_engine/skin_display.c
++++ b/apps/gui/skin_engine/skin_display.c
+@@ -269,6 +269,34 @@ void draw_progressbar(struct gui_wps *gwps, struct skin_viewport* skin_viewport,
+         flags |= INNER_NOFILL;
+     }
+ 
++    /* custom: one dot per item, lit up to the current one; squeezed (then scaled) if they don't fit */
++    if (pb->dots && pb->type == SKIN_TOKEN_LIST_SCROLLBAR &&
++        SKINOFFSETTOPTR(get_skin_buffer(gwps->data), pb->image) &&
++        SKINOFFSETTOPTR(get_skin_buffer(gwps->data), pb->backdrop))
++    {
++        struct gui_img *on = SKINOFFSETTOPTR(get_skin_buffer(gwps->data), pb->image);
++        struct gui_img *off = SKINOFFSETTOPTR(get_skin_buffer(gwps->data), pb->backdrop);
++        int d = on->bm.width, n = length, cur = end, pitch = 2 * d, i;
++
++        on->bm.data = core_get_data(on->buflib_handle);
++        off->bm.data = core_get_data(off->buflib_handle);
++        if (n > 1 && (width - d) / (n - 1) < pitch)
++            pitch = (width - d) / (n - 1);
++        if (pitch < d + 1)
++        {
++            pitch = d + 1;
++            n = (width - d) / pitch + 1;
++            cur = length ? (int)(end * n / length) : 0;
++        }
++        screen_clear_area(display, x, y, width, height);
++        for (i = 0; i < n; i++)
++        {
++            struct gui_img *img = i <= cur ? on : off;
++            display->bmp_part(&img->bm, 0, 0, x + i * pitch, y, d, img->bm.height);
++        }
++        return;
++    }
++
+     if (pb->noborder)
+     {
+         flags |= BORDER_NOFILL;
+diff --git a/apps/gui/skin_engine/skin_parser.c b/apps/gui/skin_engine/skin_parser.c
+index ec043ae..81aee47 100644
+--- a/apps/gui/skin_engine/skin_parser.c
++++ b/apps/gui/skin_engine/skin_parser.c
+@@ -952,6 +952,10 @@ static int parse_timeout_tag(struct skin_element *element,
+         }
+     }
+     token->value.i = val * TIMEOUT_UNIT;
++    /* custom: support %t(x.yz) with hundredths of a second */
++    if (token->type == SKIN_TOKEN_SUBLINE_TIMEOUT && params_count >= 1 &&
++        get_param(element, 0)->type == DECIMAL)
++        token->value.i += get_param(element, 0)->hundredths * (HZ/100);
+     return 0;
+ }
+ 
+@@ -969,8 +973,31 @@ static int parse_substring_tag(struct skin_element* element,
+     else
+         ss->length = get_param(element, 1)->data.number;
+     ss->token = get_param_code(element, 2)->data;
++    ss->textcase = 0;
++    ss->askew = false;
++    ss->wrap = 0;
++    ss->year = false;
++    ss->vp = PTRTOSKINOFFSET(skin_buffer, curr_vp);
+     if (element->params_count > 3)
+-        ss->expect_number = !strcmp(get_param_text(element, 3), "number");
++    {
++        const char *flag = get_param_text(element, 3);
++        ss->expect_number = !strcmp(flag, "number");
++        if (!strcmp(flag, "upper"))
++            ss->textcase = 'u';
++        else if (!strcmp(flag, "lower"))
++            ss->textcase = 'l';
++        else if (!strcmp(flag, "year"))
++            ss->year = true;
++        else if (!strcmp(flag, "wrap1"))
++            ss->wrap = 1;
++        else if (!strcmp(flag, "wrap2"))
++            ss->wrap = 2;
++        else if (!strcmp(flag, "askew"))
++        {
++            ss->textcase = 'u';
++            ss->askew = true;
++        }
++    }
+     else
+         ss->expect_number = false;
+     token->value.data = PTRTOSKINOFFSET(skin_buffer, ss);
+@@ -1004,6 +1031,7 @@ static int parse_progressbar_tag(struct skin_element* element,
+     pb->nofill = false;
+     pb->noborder = false;
+     pb->nobar = false;
++    pb->dots = false;
+     pb->image = PTRTOSKINOFFSET(skin_buffer, NULL);
+     pb->slider = PTRTOSKINOFFSET(skin_buffer, NULL);
+     pb->backdrop = PTRTOSKINOFFSET(skin_buffer, NULL);
+@@ -1088,7 +1116,7 @@ static int parse_progressbar_tag(struct skin_element* element,
+     enum
+     {
+         eINVERT = 0, eNOFILL, eNOBORDER, eNOBAR, eSLIDER, eIMAGE,
+-        eBACKDROP, eVERTICAL, eHORIZONTAL, eNOTOUCH, eSETTING, eSETTING_OFFSET,
++        eBACKDROP, eVERTICAL, eHORIZONTAL, eNOTOUCH, eSETTING, eSETTING_OFFSET, eDOTS,
+         e_PB_TAG_COUNT
+     };
+ 
+@@ -1096,7 +1124,7 @@ static int parse_progressbar_tag(struct skin_element* element,
+                  [eNOFILL] = "nofill", [eNOBORDER] = "noborder", [eNOBAR] = "nobar",
+                  [eSLIDER] = "slider", [eIMAGE] = "image", [eBACKDROP] = "backdrop",
+                  [eVERTICAL] = "vertical", [eHORIZONTAL] = "horizontal",
+-                 [eNOTOUCH] = "notouch", [eSETTING] = "setting", [eSETTING_OFFSET] = "soffset", [e_PB_TAG_COUNT] = NULL};
++                 [eNOTOUCH] = "notouch", [eSETTING] = "setting", [eSETTING_OFFSET] = "soffset", [eDOTS] = "dots", [e_PB_TAG_COUNT] = NULL};
+     int pb_op;
+ 
+     while (curr_param < element->params_count)
+@@ -1160,6 +1188,8 @@ static int parse_progressbar_tag(struct skin_element* element,
+         }
+         else if (pb_op == eHORIZONTAL)
+             pb->horizontal = true;
++        else if (pb_op == eDOTS)
++            pb->dots = true;
+ #ifdef HAVE_TOUCHSCREEN
+         else if (pb_op == eNOTOUCH)
+             suppress_touchregion = true;
+diff --git a/apps/gui/skin_engine/skin_render.c b/apps/gui/skin_engine/skin_render.c
+index 2f00dab..91b7988 100644
+--- a/apps/gui/skin_engine/skin_render.c
++++ b/apps/gui/skin_engine/skin_render.c
+@@ -686,7 +686,7 @@ bool skin_render_alternator(struct skin_element* element, struct skin_draw_info
+         alternator->current_line = element->children_count-1;
+         changed_lines = true;
+     }
+-    else if (TIME_AFTER(current_tick, alternator->next_change_tick))
++    else if (!TIME_BEFORE(current_tick, alternator->next_change_tick)) /* custom: >= deadline */
+     {
+         changed_lines = true;
+     }
+diff --git a/apps/gui/skin_engine/skin_tokens.c b/apps/gui/skin_engine/skin_tokens.c
+index e44544a..5c698c1 100644
+--- a/apps/gui/skin_engine/skin_tokens.c
++++ b/apps/gui/skin_engine/skin_tokens.c
+@@ -981,6 +981,145 @@ static const char* get_qs_token_value(struct wps_token *token, char *buf, int bu
+    and the original value of *intval, inclusive).
+    When not treating a conditional/enum, intval should be NULL.
+ */
++/* custom: ASCII + Latin-1 (UTF-8 C3 xx) case change in place; byte lengths don't change */
++static void skin_change_case(char *s, bool upper)
++{
++    unsigned char *p = (unsigned char *)s;
++    for (; *p; p++)
++    {
++        if (upper && *p >= 'a' && *p <= 'z')
++            *p -= 'a' - 'A';
++        else if (!upper && *p >= 'A' && *p <= 'Z')
++            *p += 'a' - 'A';
++        else if (*p == 0xC3 && p[1])
++        {
++            p++;
++            if (upper && *p >= 0xA0 && *p <= 0xBE && *p != 0xB7)
++                *p -= 0x20;
++            else if (!upper && *p >= 0x80 && *p <= 0x9E && *p != 0x97)
++                *p += 0x20;
++        }
++    }
++}
++
++/* custom: put a blank spacer glyph (U+0081..U+008F, made by convttf -J) between each pair of
++   letters, picked per pair, so letter spacing is uneven but text next to it stays evenly spaced */
++/* custom: width in pixels of the first len bytes of s in font */
++static int skin_text_width(const char *s, int len, int font)
++{
++    char tmp[MAX_PATH];
++    int w = 0, h;
++    if (len >= (int)sizeof(tmp))
++        len = sizeof(tmp) - 1;
++    memcpy(tmp, s, len);
++    tmp[len] = '\0';
++    font_getstringsize((const unsigned char *)tmp, &w, &h, font);
++    return w;
++}
++
++static int skin_prev_char(const char *s, int i)
++{
++    i--;
++    while (i > 0 && ((unsigned char)s[i] & 0xC0) == 0x80)
++        i--;
++    return i;
++}
++
++/* custom: where to wrap s so the first line fits width. Returns the byte where line 2 starts;
++ * *cut = bytes kept on line 1, *hyph = line 1 needs a trailing hyphen.
++ * Breaks at a space if line 1 stays at least 60% full, else mid-word with a hyphen
++ * (at least 2 letters of the word on each side). */
++static int skin_wrap_point(const char *s, int font, int width, int *cut, bool *hyph)
++{
++    int len = strlen(s), fit = 0, sp = -1, i;
++    *hyph = false;
++    if (skin_text_width(s, len, font) <= width)
++    {
++        *cut = len;
++        return len;
++    }
++    for (i = 1; i <= len; i++)
++    {
++        if (i < len && ((unsigned char)s[i] & 0xC0) == 0x80)
++            continue;
++        if (skin_text_width(s, i, font) > width)
++            break;
++        fit = i;
++    }
++    for (i = fit; i > 0; i--)
++        if (s[i] == ' ') { sp = i; break; }
++    if (sp > 0 && skin_text_width(s, sp, font) * 10 >= width * 6)
++    {
++        *cut = sp;
++        while (s[sp] == ' ')
++            sp++;
++        return sp;
++    }
++    {
++        int dash = skin_text_width("-", 1, font);
++        int k = fit, ws;
++        while (k > 0 && skin_text_width(s, k, font) + dash > width)
++            k = skin_prev_char(s, k);
++        for (ws = k; ws > 0 && s[ws - 1] != ' '; ws--)
++            ;
++        /* keep 2+ letters of the word on line 2 */
++        while (k - ws > 2 && (s[k] == '\0' || s[k + 1] == '\0' || s[k + 1] == ' '))
++            k = skin_prev_char(s, k);
++        if (k - ws >= 2 && s[k] != ' ' && s[k] != '\0')
++        {
++            *cut = k;
++            *hyph = (s[k - 1] != '-');
++            return k;
++        }
++    }
++    if (sp > 0)
++    {
++        *cut = sp;
++        while (s[sp] == ' ')
++            sp++;
++        return sp;
++    }
++    *cut = fit;
++    return fit;
++}
++
++static void skin_space_letters(char *s, int cap)
++{
++    static char tmp[MAX_PATH * 2];
++    const unsigned char *p = (const unsigned char *)s;
++    unsigned short prev = 0, ucs;
++    int n = 0;
++
++    if (cap > (int)sizeof(tmp))
++        cap = sizeof(tmp);
++    while (*p)
++    {
++        const unsigned char *next = utf8decode(p, &ucs);
++        int len = next - p;
++        if (prev)
++        {
++            unsigned x = prev * 31u + ucs;
++            unsigned k;
++            x ^= x >> 7;
++            x *= 2654435761u;
++            k = (x >> 24) & 15;
++            if (k && n + 2 < cap - 1)
++            {
++                tmp[n++] = 0xC2;
++                tmp[n++] = 0x80 + k;
++            }
++        }
++        if (n + len >= cap - 1)
++            break;
++        memcpy(&tmp[n], p, len);
++        n += len;
++        prev = ucs;
++        p = next;
++    }
++    tmp[n] = '\0';
++    memcpy(s, tmp, n + 1);
++}
++
+ const char *get_token_value(struct gui_wps *gwps,
+                            struct wps_token *token, int offset,
+                            char *buf, int buf_size,
+@@ -1056,6 +1195,7 @@ const char *get_token_value(struct gui_wps *gwps,
+             if (token_val)
+             {
+                 int start_byte, end_byte, byte_len;
++                int cap = buf_size;
+                 int utf8_len = utf8length(token_val);
+ 
+                 if (utf8_len < ss->start)
+@@ -1080,9 +1220,48 @@ const char *get_token_value(struct gui_wps *gwps,
+                     memcpy(buf, &token_val[start_byte], byte_len);
+                 }
+                 else
++                {
+                     buf = &buf[start_byte];
++                    cap -= start_byte;
++                }
+ 
+                 buf[byte_len] = '\0';
++                if (ss->textcase)
++                    skin_change_case(buf, ss->textcase == 'u');
++                if (ss->askew)
++                    skin_space_letters(buf, cap);
++                if (ss->year)
++                {
++                    char *p = buf;
++                    while (*p && !(p[0] >= '0' && p[0] <= '9' && p[1] >= '0' && p[1] <= '9' &&
++                                   p[2] >= '0' && p[2] <= '9' && p[3] >= '0' && p[3] <= '9'))
++                        p++;
++                    if (!*p)
++                        return NULL;
++                    buf = p;
++                    buf[4] = '\0';
++                }
++                if (ss->wrap)
++                {
++                    struct skin_viewport *svp = SKINOFFSETTOPTR(get_skin_buffer(data), ss->vp);
++                    int cut, start;
++                    bool hyph;
++                    if (!svp)
++                        return NULL;
++                    start = skin_wrap_point(buf, svp->vp.font, svp->vp.width, &cut, &hyph);
++                    if (ss->wrap == 1)
++                    {
++                        if (hyph && cut + 1 < cap)
++                            buf[cut++] = '-';
++                        buf[cut] = '\0';
++                    }
++                    else
++                    {
++                        buf = &buf[start];
++                        if (!*buf)
++                            return NULL;
++                    }
++                }
+                 if (ss->expect_number &&
+                     intval && (buf[0] >= '0' && buf[0] <= '9'))
+                 {
+diff --git a/apps/gui/skin_engine/wps_internals.h b/apps/gui/skin_engine/wps_internals.h
+index 67fc711..9957524 100644
+--- a/apps/gui/skin_engine/wps_internals.h
++++ b/apps/gui/skin_engine/wps_internals.h
+@@ -136,6 +136,7 @@ struct progressbar {
+     bool nofill;
+     bool noborder;
+     bool nobar;
++    bool dots; /* custom: one image dot per item (lit: image, unlit: backdrop), %LB only */
+     OFFSETTYPE(struct gui_img *) slider;
+ 
+     OFFSETTYPE(struct gui_img *) backdrop;
+@@ -315,6 +316,11 @@ struct substring {
+     int16_t start;
+     int16_t length;
+     bool expect_number;
++    char textcase; /* custom: 'u' = %ss(...,upper), 'l' = %ss(...,lower), 0 = as is */
++    bool askew;    /* custom: %ss(...,askew) = upper + uneven letter spacing (font from convttf -J) */
++    bool year;     /* custom: %ss(...,year) = just the first 4-digit run ("09-22-1992" -> "1992") */
++    char wrap;     /* custom: %ss(...,wrap1|wrap2) = 1st / 2nd line of the text wrapped to the viewport width */
++    OFFSETTYPE(struct skin_viewport *) vp; /* viewport the tag sits in (font + width for wrap) */
+     OFFSETTYPE(struct wps_token *) token;
+ };
+ 
+diff --git a/apps/gui/usb_screen.c b/apps/gui/usb_screen.c
+index e16428e..e0c2af0 100644
+--- a/apps/gui/usb_screen.c
++++ b/apps/gui/usb_screen.c
+@@ -229,7 +229,9 @@ static void usb_screens_draw(struct usb_screen_vps_t *usb_screen_vps_ar)
+         if (i == SCREEN_MAIN)
+         {
+ #ifdef USB_ENABLE_HID
+-            if (usb_hid)
++            /* custom: a full-screen USB logo leaves no room for the keypad-mode line below it;
++               drawing it off-screen writes past the framebuffer and crashes, so skip it */
++            if (usb_hid && usb_screen_vps->title.y + usb_screen_vps->title.height <= screen->lcdheight)
+             {
+                 char modestring[100];
+                 screen->set_viewport(&usb_screen_vps->title);
+diff --git a/apps/gui/wps.c b/apps/gui/wps.c
+index 530307c..dd4aa6e 100644
+--- a/apps/gui/wps.c
++++ b/apps/gui/wps.c
+@@ -61,6 +61,7 @@
+ #include "option_select.h"
+ #include "playlist_viewer.h"
+ #include "wps.h"
++#include "peakmeter.h"
+ #include "statusbar-skinned.h"
+ #include "skin_engine/wps_internals.h"
+ #include "open_plugin.h"
+@@ -322,6 +323,16 @@ static bool ffwd_rew(int button, bool seek_from_end)
+                 exit = true;
+                 break;
+ 
++            case ACTION_NONE:
++                /* custom: no repeat event yet, keep the skin animating while seeking */
++                FOR_NB_SCREENS(i)
++                {
++                    skin_update(WPS, i,
++                                SKIN_REFRESH_PLAYER_PROGRESS |
++                                SKIN_REFRESH_DYNAMIC);
++                }
++                break;
++
+             default:
+                 if(default_event_handler(button) == SYS_USB_CONNECTED) {
+                     status_set_ffmode(0);
+@@ -332,7 +343,8 @@ static bool ffwd_rew(int button, bool seek_from_end)
+         }
+         if (!exit)
+         {
+-            button = get_action(CONTEXT_WPS|ALLOW_SOFTLOCK,TIMEOUT_BLOCK);
++            /* custom: wake up at the skin frame rate instead of only on button repeats */
++            button = get_action(CONTEXT_WPS|ALLOW_SOFTLOCK, HZ/PEAK_METER_FPS);
+ #ifdef HAVE_TOUCHSCREEN
+             if (button == ACTION_TOUCHSCREEN)
+                 button = skintouch_to_wps();
+diff --git a/apps/main.c b/apps/main.c
+index 454ff90..d22f2e2 100644
+--- a/apps/main.c
++++ b/apps/main.c
+@@ -254,11 +254,9 @@ int show_logo_boot( void )
+         lcd_putsxy((LCD_WIDTH/2) - (ver_w/2), 0, version);
+     lcd_bmp(&bm_rockboxlogo, (LCD_WIDTH - BMPWIDTH_rockboxlogo) / 2, 16);
+ #else
+-    lcd_bmp(&bm_rockboxlogo, (LCD_WIDTH - BMPWIDTH_rockboxlogo) / 2, 10);
+-    if (ver_w > LCD_WIDTH)
+-        lcd_putsxy(0, LCD_HEIGHT-font_h, rbversion);
+-    else
+-        lcd_putsxy((LCD_WIDTH/2) - (ver_w/2), LCD_HEIGHT-font_h, version);
++    /* custom: full-screen boot image, no version line */
++    (void)ver_w;
++    lcd_bmp(&bm_rockboxlogo, (LCD_WIDTH - BMPWIDTH_rockboxlogo) / 2, 0);
+ #endif
+     lcd_setfont(FONT_UI);
+     lcd_update();
+diff --git a/apps/recorder/peakmeter.h b/apps/recorder/peakmeter.h
+index b1226d4..184471f 100644
+--- a/apps/recorder/peakmeter.h
++++ b/apps/recorder/peakmeter.h
+@@ -21,7 +21,7 @@
+ #ifndef __PEAKMETER_H__
+ #define __PEAKMETER_H__
+ 
+-#define PEAK_METER_FPS 10 /* bugfix FS#10686*/
++#define PEAK_METER_FPS 25 /* custom: 25 fps skin refresh (stock: 10, bugfix FS#10686) */
+ #define MAX_PEAK 0x8000
+ 
+ /*#define PM_DEBUG */
+diff --git a/firmware/target/hosted/sdl/button-sdl.c b/firmware/target/hosted/sdl/button-sdl.c
+index 734d6e4..9f66ca9 100644
+--- a/firmware/target/hosted/sdl/button-sdl.c
++++ b/firmware/target/hosted/sdl/button-sdl.c
+@@ -21,6 +21,8 @@
+ 
+ #include <math.h>
+ #include <stdlib.h>         /* EXIT_SUCCESS */
++#include <ctype.h>
++#include <string.h>
+ #include "sim-ui-defines.h"
+ #ifdef HAVE_REMOTE_LCD
+ #include "lcd-remote.h"
+@@ -391,6 +393,39 @@ int sdl_event_filter(void *userdata, SDL_Event * event)
+ }
+ #endif
+ 
++/* local test hack: RB_KEYS="3000 Down F5 Return 500 F5 +Right 2000 -Right"
++   (ms delays / SDL key names, +key = hold, -key = release) */
++static int scripted_keys(void *data)
++{
++    char buf[1024], *tok, *save;
++    (void)data;
++    strlcpy(buf, getenv("RB_KEYS"), sizeof(buf));
++    for (tok = strtok_r(buf, " ", &save); tok; tok = strtok_r(NULL, " ", &save))
++    {
++        if (isdigit((unsigned char)tok[0]))
++        {
++            SDL_Delay(atoi(tok));
++            continue;
++        }
++        SDL_Event e = { 0 };
++        if (tok[0] == '+' || tok[0] == '-')
++        {
++            e.type = tok[0] == '+' ? SDL_KEYDOWN : SDL_KEYUP;
++            e.key.keysym.sym = SDL_GetKeyFromName(tok + 1);
++            SDL_PushEvent(&e);
++            continue;
++        }
++        e.type = SDL_KEYDOWN;
++        e.key.keysym.sym = SDL_GetKeyFromName(tok);
++        SDL_PushEvent(&e);
++        SDL_Delay(60);
++        e.type = SDL_KEYUP;
++        SDL_PushEvent(&e);
++        SDL_Delay(250);
++    }
++    return 0;
++}
++
+ void gui_message_loop(void)
+ {
+     SDL_Event event;
+@@ -711,6 +746,8 @@ int button_read_device(void)
+ 
+ void button_init_device(void)
+ {
++    if (getenv("RB_KEYS"))
++        SDL_CreateThread(scripted_keys, "keys", NULL);
+ #ifdef SIMULATOR
+     if (!sdl_focus_cursor)
+         sdl_focus_cursor = SDL_CreateSystemCursor(SDL_SYSTEM_CURSOR_HAND);
+diff --git a/lib/skin_parser/skin_parser.c b/lib/skin_parser/skin_parser.c
+index 8fe7536..bde60fa 100644
+--- a/lib/skin_parser/skin_parser.c
++++ b/lib/skin_parser/skin_parser.c
+@@ -684,6 +684,7 @@ static int skin_parse_tag(struct skin_element* element, const char** document)
+             type_code = *tag_args;
+         /* Storing the type code */
+         params[i].type_code = type_code;
++        params[i].hundredths = 0;
+ 
+         /* Checking a nullable argument for null. */
+         if(*cursor == DEFAULTSYM && !isdigit(cursor[1]))
+@@ -726,6 +727,12 @@ static int skin_parse_tag(struct skin_element* element, const char** document)
+                     {
+                         have_tenth = true;
+                         cursor++;
++                        /* custom: keep one more digit as hundredths */
++                        if (isdigit(*cursor))
++                        {
++                            params[i].hundredths = *cursor - '0';
++                            cursor++;
++                        }
+                         break;
+                     }
+                 }
+diff --git a/lib/skin_parser/skin_parser.h b/lib/skin_parser/skin_parser.h
+index f6ba2a2..653917f 100644
+--- a/lib/skin_parser/skin_parser.h
++++ b/lib/skin_parser/skin_parser.h
+@@ -108,6 +108,7 @@ struct skin_tag_parameter
+     } type;
+ 
+     char type_code;
++    signed char hundredths; /* custom: second decimal digit of DECIMAL params (0-9) */
+ 
+     union
+     {
+diff --git a/tools/convttf.c b/tools/convttf.c
+index f91d0d5..e378813 100644
+--- a/tools/convttf.c
++++ b/tools/convttf.c
+@@ -107,6 +107,8 @@ int             hv_resolution = 60;
+ int             dump_glyphs = 0;
+ int             digits_equally_wide = 1; /* Try to make digits equally wide */
+ int             trimming    = 0;
++int             use_advance = 0; /* -A: keep side bearings (width = advance) */
++int             jitter      = 0; /* -J N: letters N px tighter each side + spacer glyphs, see spacer_width() */
+ int             trim_dp     = 0; /* trim descent percent */
+ int             trim_da     = 0; /* trim descnet actual  */
+ int             trim_ap     = 0; /* trim ascent  precent */
+@@ -195,6 +197,9 @@ void usage(void)
+         "    -l N   Limit output to character encodings <= N\n"
+         "    -p N   Font size N in pixel (default N=15)\n"
+         "    -c N   Character separation in pixel.Insert space between lines.\n"
++        "    -A     Use the font's advance widths and side bearings\n"
++        "    -J N   Tighten letters by N px each side and add blank spacer glyphs\n"
++        "              U+0081..U+008F, 1..2N px wide, mostly 1 px (needs -A; for the skin %ss askew flag)\n"
+         "    -x     Trim glyphs horizontally of nearly empty space\n"
+         "              (to improve spacing on V's W's, etc.)\n"
+         "    -X     Set the horizontal and vertical resolution (default: 60)\n"
+@@ -512,11 +517,33 @@ void print_raw_glyph( FT_Face face)
+     printf("----End-----\n");
+ }
+ 
++/* -J: width of the blank spacer glyph at code, 0 if code isn't one.
++   The first five are 1 px so about a third of letter pairs (with "none") nearly touch */
++int spacer_width( FT_Long code )
++{
++    if (!jitter || code < 0x81 || code > 0x8F)
++        return 0;
++    if (code <= 0x85)
++        return 1;
++    return 2 + ((code - 0x86) * (2 * jitter - 2) + 4) / 9;
++}
++
++/* -J: blank columns left and right of the ink, the font's bearings minus jitter (quotes keep theirs) */
++void jitter_pads( FT_Face face, FT_Long code, int *left, int *right )
++{
++    int pitch = ABS(face->glyph->bitmap.pitch);
++    int side = ((face->glyph->metrics.horiAdvance >> 6) - pitch) / 2;
++
++    if (code != '"')
++        side -= jitter;
++    *left = *right = side > 0 ? side : 0;
++}
++
+ int glyph_width( FT_Face face, FT_Long code, FT_Long digit_width )
+ {
+     int width;
+ 
+-    if (code >= '0' && code <= '9' && digit_width)
++    if (code >= '0' && code <= '9' && digit_width && !jitter)
+     {
+         width = digit_width;
+     }
+@@ -531,6 +558,19 @@ int glyph_width( FT_Face face, FT_Long code, FT_Long digit_width )
+ 
+         if(pitch == 0)    pitch = h_adv;
+         if(width < pitch) width = pitch;
++        if (use_advance)
++        {
++            int left = face->glyph->bitmap_left;
++            if (left < 0) left = 0;
++            width = h_adv;
++            if (width < left + pitch) width = left + pitch;
++            if (jitter && pitch)
++            {
++                int right;
++                jitter_pads(face, code, &left, &right);
++                width = left + pitch + right;
++            }
++        }
+     }
+ 
+     return width;
+@@ -687,6 +727,16 @@ void convttf(char* path, char* destfile, FT_Long face_index)
+     /* calculate memory usage */
+     for(code = start_char; code <= limit_char ; code++ )
+     {
++        if ((w = spacer_width(code)))
++        {
++            if (export_font.header.maxwidth < w)
++                export_font.header.maxwidth = w;
++            char_count++;
++            idx += (w*export_font.header.height + pixel_per_byte - 1)/pixel_per_byte;
++            if (code >= lastchar) lastchar = code;
++            if (code <= firstchar) firstchar = code;
++            continue;
++        }
+         charindex = getcharindex( face, code);
+         if ( !(charindex) ) continue;
+         err = FT_Load_Glyph(face, charindex, ft_load_opts);
+@@ -759,6 +809,19 @@ void convttf(char* path, char* destfile, FT_Long face_index)
+         int numbits;
+         unsigned int field;
+ 
++        if ((w = spacer_width(code)))
++        {
++            int nbytes = (w*h + pixel_per_byte - 1)/pixel_per_byte;
++            if ( use_long_offset )
++                export_font.offset_long[code - firstchar] = idx;
++            else
++                export_font.offset[code - firstchar] = idx;
++            export_font.width[code - firstchar] = w;
++            memset(&export_font.chars_data[idx], 0xff, nbytes);
++            idx += nbytes;
++            continue;
++        }
++
+         /* Get gylph index from the char and render it */
+         charindex = getcharindex( face, code);
+         if ( !charindex ) 
+@@ -815,6 +878,13 @@ void convttf(char* path, char* destfile, FT_Long face_index)
+         col_off = w - stride;
+         if (col_off > 1) col_off /= 2;
+         if (col_off < 0) col_off = 0;
++        if (use_advance)
++            col_off = slot->bitmap_left > 0 ? slot->bitmap_left : 0;
++        if (use_advance && jitter && stride)
++        {
++            int right;
++            jitter_pads(face, code, &col_off, &right);
++        }
+ 
+         for(row=0; row < glyph_height; row++)
+         {
+@@ -1140,6 +1210,19 @@ void getopts(int *pac, char ***pav)
+                 while (*p && *p != ' ')
+                     p++;
+                 break;
++            case 'J':
++                {
++                    char *arg = *p ? p : (ac > 1 ? (av++, ac--, av[0]) : "");
++                    jitter = atoi(arg);
++                    while (*p && *p != ' ')
++                        p++;
++                }
++                break;
++            case 'A':
++                use_advance = 1;
++                while (*p && *p != ' ')
++                    p++;
++                break;
+             case 'x':
+                 trimming = 1;
+                 while (*p && *p != ' ')

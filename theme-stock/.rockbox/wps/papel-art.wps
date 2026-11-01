@@ -1,0 +1,33 @@
+#__papél player, alternate: album art with the title running across it.
+#__c/o Jorge Cuza, CC BY 4.0. github.com/jorgecuza92/papel
+#__320x240 (iPod Video)
+#__standard Rockbox 4.0 edition
+%wd
+%Fl(2,44-Heros-Bold.fnt)
+%Fl(3,18-Heros-Regular.fnt)
+%Fl(4,14-Courier-Prime-Papel.fnt)
+%xl(M,mark.bmp,0,0)
+%xl(G,pbbg.bmp,0,0)
+%xl(B,pbfg.bmp,0,0)
+%Cl(0,0,240,240)
+#__album art
+%V(80,0,240,240,-)
+%Cd
+#__left strip
+%V(12,12,57,27,-)
+%xd(M)
+%V(12,48,64,14,4)%Vf(000000)
+%al%pp/%pe
+%V(12,200,64,14,4)%Vf(000000)
+%al%pc
+%V(12,218,64,14,4)%Vf(7A7772)
+%al-%pr
+#__title band through the art
+%V(12,104,308,54,2)%Vf(000000)
+%al%s"%ss(0,-,%it,lower)"
+#__artist band
+%V(12,158,308,23,3)%Vf(000000)
+%al%s%ss(0,-,%ia,lower)
+#__progress hairline along the bottom of the art
+%V(80,237,240,3,-)
+%pb(0,0,240,3,B,backdrop,G)

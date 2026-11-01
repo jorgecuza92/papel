@@ -1,0 +1,46 @@
+#__papél player: big type. barcode + [o]TM on the header row, lowercase title, "ARTIST" / album / C. year.
+#__c/o Jorge Cuza, CC BY 4.0. github.com/jorgecuza92/papel
+#__320x240 (iPod Video)
+#__needs the papél firmware for lowercase/caps, album wrap and C. year
+%wd
+%Fl(2,64-Heros-Bold.fnt)
+%Fl(3,18-Heros-Regular.fnt)
+%Fl(4,14-Courier-Prime-Papel.fnt)
+%Fl(5,14-Heros-Regular.fnt)
+%Fl(6,18-Heros-Regular-Tight.fnt)
+%xl(M,mark.bmp,0,0)
+%xl(Q,barcode.bmp,0,0)
+%xl(G,pbbg.bmp,0,0)
+%xl(B,pbfg.bmp,0,0)
+#
+#__barcode (Code 128, scans as "dobby")
+%V(16,8,90,27,-)
+%xd(Q)
+%V(247,8,57,27,-)
+%xd(M)
+#__song
+%V(16,44,288,77,2)%Vf(000000)
+%al%s%ss(0,-,%it,lower)
+#__"ARTIST"
+%V(16,124,288,20,6)%Vf(000000)
+%al%s"%ss(0,-,%ia,upper)"
+#__album, line 1
+%V(16,144,288,20,6)%Vf(000000)
+%al%ss(0,-,%id,wrap1)
+#__album, line 2 (also picks where the year line goes)
+%V(16,164,288,20,6)%Vf(000000)
+%al%s%ss(0,-,%id,wrap2)%?ss(0,-,%id,wrap2)<%Vd(f2)|%Vd(f1)>
+#__year, right under the album
+%Vl(f1,16,164,288,20,6)%Vf(000000)
+%al%?iy<C. %ss(0,-,%iy,year)|>
+%Vl(f2,16,184,288,20,6)%Vf(000000)
+%al%?iy<C. %ss(0,-,%iy,year)|>
+#__progress + time
+%V(16,210,288,1,-)
+%pb(0,0,288,1,B,backdrop,G)
+%V(16,218,90,14,4)%Vf(000000)
+%al%pc
+%V(115,218,90,14,4)%Vf(7A7772)
+%ac%pp/%pe
+%V(214,218,90,14,4)%Vf(000000)
+%ar-%pr

@@ -1,0 +1,53 @@
+#__papél player, alternate: industrial label grid.
+#__c/o Jorge Cuza, CC BY 4.0. github.com/jorgecuza92/papel
+#__320x240 (iPod Video)
+#__standard Rockbox 4.0 edition
+%wd
+%Fl(2,24-Heros-Bold.fnt)
+%Fl(3,14-Heros-Regular.fnt)
+%Fl(4,14-Courier-Prime-Papel.fnt)
+%Fl(5,12-Heros-Regular.fnt)
+%xl(M,mark.bmp,0,0)
+%xl(G,pbbg.bmp,0,0)
+%xl(B,pbfg.bmp,0,0)
+%Cl(0,0,96,96)
+#__frame + grid
+%V(8,8,304,224,-)%Vf(000000)
+%dr(0,0,304,1)%dr(0,223,304,1)%dr(0,0,1,224)%dr(303,0,1,224)%dr(0,36,304,1)%dr(0,140,304,1)%dr(0,180,304,1)%dr(108,36,1,104)%dr(101,180,1,44)%dr(202,180,1,44)
+#__header
+%V(16,19,230,14,4)%Vf(000000)
+%al%sc/o %ss(0,-,%ia,lower)
+%V(247,12,57,27,-)
+%xd(M)
+#__art cell
+%V(14,50,96,96,-)
+%Cd
+#__title / album / year / position
+%V(124,52,182,30,2)%Vf(000000)
+%al%s"%ss(0,-,%it,lower)"
+%V(124,86,182,18,3)%Vf(000000)
+%al%s%?id<%ss(0,-,%id,lower)|->
+%V(124,108,182,14,4)%Vf(7A7772)
+%al%?iy<%iy|>
+%V(124,124,182,14,4)%Vf(7A7772)
+%al%pp of %pe
+#__progress
+%V(18,158,284,6,-)
+%pb(0,0,284,6,B,backdrop,G)
+%V(18,168,140,14,4)%Vf(000000)
+%al%pc
+%V(162,168,140,14,4)%Vf(000000)
+%ar%pt
+#__bottom cells
+%V(9,192,100,15,5)%Vf(7A7772)
+%acformat
+%V(9,210,100,14,4)%Vf(000000)
+%ac%?fc<mp1|mp2|mp3|aiff|wav|vorbis|flac|mpc|a52|wavpack|alac|aac|shorten|sid|adx|nsf|speex|spc|ape|wma|unknown>
+%V(110,192,100,15,5)%Vf(7A7772)
+%acbitrate
+%V(110,210,100,14,4)%Vf(000000)
+%ac%fbkbps
+%V(211,192,100,15,5)%Vf(7A7772)
+%acvolume
+%V(211,210,100,14,4)%Vf(000000)
+%ac%pv

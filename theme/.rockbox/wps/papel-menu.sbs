@@ -1,0 +1,32 @@
+#__papél menu: one [item] per screen, lowercase, corner ticks, [o]TM top right.
+#__c/o Jorge Cuza, CC BY 4.0. github.com/jorgecuza92/papel
+#__320x240 (iPod Video)
+%Fl(3,17-Courier-Prime-Papel.fnt)
+#
+#__Images
+%xl(M,mark.bmp,0,0)
+#
+#__List setup, kept in a 1x1 viewport so sbs redraws never clear the list
+%V(0,0,1,1,-)
+%Vi(-,0,0,320,240,1)
+%Lb(i,320,240)
+#
+#__Item viewports (all labelled i, drawn once per item). The scrolling one must be last.
+#
+#__Corner ticks
+%Vl(i,4,4,7,7,-)%Vf(B9B6AF)
+%dr(0,0,7,1)%dr(0,0,1,7)
+%Vl(i,309,4,7,7,-)%Vf(B9B6AF)
+%dr(0,0,7,1)%dr(6,0,1,7)
+%Vl(i,4,229,7,7,-)%Vf(B9B6AF)
+%dr(0,6,7,1)%dr(0,0,1,7)
+%Vl(i,309,229,7,7,-)%Vf(B9B6AF)
+%dr(0,6,7,1)%dr(6,0,1,7)
+#
+#__Mark
+%Vl(i,247,8,57,27,-)
+%xd(M)
+#
+#__Item text (scrolls when wider than the screen); askew = caps + uneven letter spacing, needs the -Askew font
+%Vl(i,16,104,288,17,3)%Vf(000000)
+%al%s[%ss(0,-,%LT,lower)]
