@@ -10,12 +10,6 @@ It has off-white menus with one `[item]` per screen, a big-type player with a re
 |---|---|---|---|
 | ![menu](screenshots/menu.png) | ![player](screenshots/player.png) | ![usb](screenshots/usb.png) | ![boot](screenshots/boot.png) |
 
-Alternate players (pick them in the theme list):
-
-| papel-sheet | papel-art | papel-label |
-|---|---|---|
-| ![sheet](screenshots/papel-sheet.png) | ![art](screenshots/papel-art.png) | ![label](screenshots/papel-label.png) |
-
 ## "two editions"
 
 | | `theme/` + `firmware/` (full) | `theme-stock/` |
@@ -93,3 +87,13 @@ Use it, change it, share it. Just give credit:
   - Licence texts are in `fonts-licenses/`.
 
 Rockbox is © The Rockbox Team ([rockbox.org](https://www.rockbox.org)). Inspired by the catalogue and wall-text language of Virgil Abloh. papél is an independent personal project, not affiliated with him, his estate, Rockbox or Apple.
+
+## "alternate players"
+
+Pick these in the theme list (`papel-sheet`, `papel-art`, `papel-label`).
+
+<p>
+<img src="screenshots/papel-sheet.png" width="240" alt="papel-sheet">
+<img src="screenshots/papel-art.png" width="240" alt="papel-art">
+<img src="screenshots/papel-label.png" width="240" alt="papel-label">
+</p>
