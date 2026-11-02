@@ -1,5 +1,3 @@
-![papél on an iPod Video](screenshots/strip.png)
-
 # papel
 
 `[●]™` "papél" c/o jorge cuza: a Rockbox theme for the **iPod Video (5G / 5.5G, 320×240)**.
