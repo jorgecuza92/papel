@@ -95,3 +95,12 @@ Pick these in the theme list (`papel-sheet`, `papel-art`, `papel-label`).
 <img src="screenshots/papel-art.png" width="240" alt="papel-art">
 <img src="screenshots/papel-label.png" width="240" alt="papel-label">
 </p>
+
+## "reel players"
+
+Prefer a tape deck? The black and off-white reel players (adapted from OP_1 by CHUCK_LARDO) live in [**papel-engineering**](https://github.com/jorgecuza92/papel-engineering).
+
+<p>
+<img src="https://raw.githubusercontent.com/jorgecuza92/papel-engineering/main/screenshots/papel-reel.png" width="240" alt="papel-reel">
+<img src="https://raw.githubusercontent.com/jorgecuza92/papel-engineering/main/screenshots/papel-reel-paper.png" width="240" alt="papel-reel-paper">
+</p>
